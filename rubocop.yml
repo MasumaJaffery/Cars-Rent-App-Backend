@@ -1,14 +1,15 @@
 AllCops:
+  SuggestExtensions: false
   NewCops: enable
   Exclude:
-    - "db/**/*"
+    - "db/**/*" 
     - "bin/*" 
     - "config/**/*"
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
 
-  DisplayCopNames: true
+  DisplayCopNames: true 
 
 Layout/LineLength:
   Max: 120
@@ -58,4 +59,8 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-  
+ Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  AutoCorrect: true
