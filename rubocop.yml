@@ -1,4 +1,5 @@
 AllCops:
+  SuggestExtensions: false
   NewCops: enable
   Exclude:
     - "db/**/*"
@@ -58,8 +59,6 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
- SuggestExtensions: 
- Enabled: false
  Style/FrozenStringLiteralComment:
   Enabled: false
 Style/FrozenStringLiteralComment:
