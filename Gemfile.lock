@@ -76,6 +76,7 @@ GEM
       mutex_m
       tzinfo (~> 2.0)
     base64 (0.2.0)
+    bcrypt (3.1.19)
     bigdecimal (3.1.4)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
@@ -87,8 +88,26 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    devise (4.9.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+    devise-jwt (0.11.0)
+      devise (~> 4.0)
+      warden-jwt_auth (~> 0.8)
     drb (2.2.0)
       ruby2_keywords
+    dry-auto_inject (1.0.1)
+      dry-core (~> 1.0)
+      zeitwerk (~> 2.6)
+    dry-configurable (1.1.0)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
+    dry-core (1.0.1)
+      concurrent-ruby (~> 1.0)
+      zeitwerk (~> 2.6)
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -98,6 +117,9 @@ GEM
     irb (1.9.0)
       rdoc
       reline (>= 0.3.8)
+    jsonapi-serializer (2.2.0)
+      activesupport (>= 4.2)
+    jwt (2.7.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -123,6 +145,7 @@ GEM
     nio4r (2.6.0)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pg (1.5.4)
     psych (5.1.1.1)
       stringio
@@ -130,6 +153,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.8)
+    rack-cors (2.0.1)
+      rack (>= 2.0.0)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -171,12 +196,22 @@ GEM
       psych (>= 4.0.0)
     reline (0.4.0)
       io-console (~> 0.5)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     ruby2_keywords (0.0.5)
     stringio (3.0.9)
     thor (1.3.0)
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
+    warden-jwt_auth (0.8.0)
+      dry-auto_inject (>= 0.8, < 2)
+      dry-configurable (>= 0.13, < 2)
+      jwt (~> 2.1)
+      warden (~> 1.2)
     webrick (1.8.1)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -189,8 +224,12 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  devise
+  devise-jwt
+  jsonapi-serializer
   pg (~> 1.1)
   puma (>= 5.0)
+  rack-cors
   rails (~> 7.1.2)
   tzinfo-data
 
