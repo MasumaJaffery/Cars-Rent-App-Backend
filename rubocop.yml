@@ -60,4 +60,8 @@ Style/HashTransformValues:
   Enabled: false
  SuggestExtensions: 
  Enabled: false
- 
+ Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  AutoCorrect: true
