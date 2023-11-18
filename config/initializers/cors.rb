@@ -1,14 +1,21 @@
-# frozen_string_literal: true
-
 # config/initializers/cors.rb
+
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:3000'
-    resource(
-      '*',
+    origins 'http://127.0.0.1:3000' # Replace with your frontend URL
+
+    resource '/api/v1/*',
       headers: :any,
-      expose: %w[access-token expiry token-type Authorization],
-      methods: %i[get patch put delete post options show]
-    )
+      methods: [:get, :post, :put, :patch, :delete, :options],
+      credentials: true
+  end
+
+  allow do
+    origins 'http://127.0.0.1:3000' # Replace with your frontend URL
+
+    resource '/login',
+      headers: :any,
+      methods: [:post], # Adjust with the method used for login
+      credentials: true
   end
 end
