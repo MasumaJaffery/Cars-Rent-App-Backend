@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '0ecec4925010e7a10a115e092dbac67061de0d932e520a47cda0af468ee5039552a45d3952e0c79bbcd824cb83b01814cf9bda80c2943975cdcc93955edc773e'
+  # config.secret_key = 'ec0ca6c31464b81138ed6a8d7b70fa36b2ef9b911802e7e7cf79e88120a222a1819d6741db41da7e522f5bf6f7c1bd8a96ce82f3f52f87a1776763f672f4cb04'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'aafb1f06874948a1150b234cc480af543b1b4b3a579b7bc9beed960cba77ece154455b036541ac405489a74abaf1a7f0d19afe3d0a8b0ef8e7111af9ec9d1980'
+  # config.pepper = '31c4f845d201c45235dd67179ab0c261351265499a22efc3297cc1f906cf183fd4f476510035f28f12b854da2620a5e5cb1a0f37372a6b2fe2030a5a897a53f1'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -263,7 +263,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  config.navigational_formats = []
+  # config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
@@ -292,16 +292,6 @@ Devise.setup do |config|
   # The router that invoked `devise_for`, in the example above, would be:
   # config.router_name = :my_engine
   #
-  config.jwt do |jwt|
-    jwt.secret = Rails.application.credentials.fetch(:secret_key_base)
-    jwt.dispatch_requests = [
-      ['POST', %r{^/login$}]
-    ]
-    jwt.revocation_requests = [
-      ['DELETE', %r{^/logout$}]
-    ]
-    jwt.expiration_time = 30.minutes.to_i
-  end
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
