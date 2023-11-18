@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class CarsController < ApplicationController
       before_action :set_car, only: %i[show destroy]
 
-      
+
       def index
         @cars = Car.all
         render json: @cars
