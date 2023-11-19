@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Item < ApplicationRecord
-    has_many :reservations
+  has_many :reservations
 end
