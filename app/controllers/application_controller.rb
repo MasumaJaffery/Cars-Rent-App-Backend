@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ApplicationController < ActionController::API
   before_action :authenticate_request
 
@@ -12,6 +10,7 @@ class ApplicationController < ActionController::API
       begin
         @decoded = JsonWebToken.decode(token)
         @current_user = User.find(@decoded[:user_id]) if @decoded
+        Rails.logger.debug "Decoded token: #{@decoded}" # Add this line to debug
       rescue ActiveRecord::RecordNotFound => e
         render json: { errors: e.message }, status: :unauthorized
       rescue JWT::DecodeError => e
@@ -21,4 +20,4 @@ class ApplicationController < ActionController::API
       render json: { errors: 'Missing token' }, status: :unauthorized
     end
   end
-end
+end  
