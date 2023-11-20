@@ -7,9 +7,11 @@ module Users
     private
 
     def respond_with(resource, _opts = {})
+      token = JsonWebToken.encode(user_id: resource.id)  # Assuming you have a JsonWebToken module for encoding
       render json: {
-        status: { code: 200, message: 'Logged in sucessfully.' },
-        data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
+        status: { code: 200, message: 'Logged in successfully.' },
+        data: UserSerializer.new(resource).serializable_hash[:data][:attributes],
+        token: token
       }, status: :ok
     end
 

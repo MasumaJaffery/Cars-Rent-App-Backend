@@ -40,7 +40,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def reservation_params
-        params.require(:reservation).permit(:user_id, :car_id, :appointment_date)
+        params.require(:reservation).permit(:user_id, :car_id, :date, :city)
       end
     end
   end

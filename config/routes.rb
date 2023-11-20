@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'current_user/index'
   root to: 'api/v1/users#index'
 
   get '/current_user', to: 'current_user#index'
