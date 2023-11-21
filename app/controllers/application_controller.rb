@@ -1,3 +1,4 @@
+require_relative './helpers/json_web_token'
 class ApplicationController < ActionController::API
   before_action :authenticate_request
 
@@ -20,4 +21,4 @@ class ApplicationController < ActionController::API
       render json: { errors: 'Missing token' }, status: :unauthorized
     end
   end
-end  
+end
