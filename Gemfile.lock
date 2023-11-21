@@ -82,6 +82,7 @@ GEM
     bootsnap (1.17.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.5.0)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -258,6 +259,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cancancan
   debug
   devise
   devise-jwt
@@ -269,6 +271,7 @@ DEPENDENCIES
   rails (~> 7.1.2)
   rubocop (>= 1.0, < 2.0)
   tzinfo-data
+  warden-jwt_auth
 
 RUBY VERSION
    ruby 3.2.2p53

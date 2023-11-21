@@ -3,6 +3,7 @@
 module Api
   module V1
     class CarsController < ApplicationController
+      load_and_authorize_resource
       before_action :set_car, only: %i[show destroy]
 
       def index

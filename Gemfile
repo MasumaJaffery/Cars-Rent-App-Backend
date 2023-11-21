@@ -16,6 +16,8 @@ gem 'devise-jwt'
 gem 'jsonapi-serializer'
 gem 'puma', '>= 5.0'
 gem 'rack-cors'
+gem 'warden-jwt_auth'
+gem 'cancancan'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
