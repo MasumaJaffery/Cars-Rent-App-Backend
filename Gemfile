@@ -11,13 +11,13 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
+gem 'cancancan'
 gem 'devise'
 gem 'devise-jwt'
 gem 'jsonapi-serializer'
 gem 'puma', '>= 5.0'
 gem 'rack-cors'
 gem 'warden-jwt_auth'
-gem 'cancancan'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'jwt'
 
 class JsonWebToken
@@ -6,14 +8,13 @@ class JsonWebToken
 
   # Encode a payload into a JWT token
   # json_web_token.rb
-    def self.encode(payload, expiration = 24.hours.from_now)
-      payload[:exp] = expiration.to_i
-      JWT.encode(payload, SECRET_KEY)
-    end
-  
-    def self.decode(token)
-      decoded = JWT.decode(token, SECRET_KEY).first
-      HashWithIndifferentAccess.new(decoded)
-    end
+  def self.encode(payload, expiration = 24.hours.from_now)
+    payload[:exp] = expiration.to_i
+    JWT.encode(payload, SECRET_KEY)
   end
 
+  def self.decode(token)
+    decoded = JWT.decode(token, SECRET_KEY).first
+    HashWithIndifferentAccess.new(decoded)
+  end
+end
