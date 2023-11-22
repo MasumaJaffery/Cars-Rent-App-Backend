@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # app/models/ability.rb
 class Ability
   include CanCan::Ability
