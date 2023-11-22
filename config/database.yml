@@ -22,8 +22,8 @@ default: &default
 development:
   <<: *default
   database: cars_rent_app_backend_development
-  # username: cars_rent_app_backend
-  # password: <%= ENV["CARS_RENT_APP_BACKEND_DATABASE_PASSWORD"] %>
+  username: cars_rent_app_backend
+  password: <%= ENV["CARS_RENT_APP_BACKEND_DATABASE_PASSWORD"] %>
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -58,8 +58,8 @@ development:
 test:
   <<: *default
   database: cars_rent_app_backend_test
- # username: cars_rent_app_backend
- # password: <%= ENV["CARS_RENT_APP_BACKEND_DATABASE_PASSWORD"] %>
+  username: cars_rent_app_backend
+  password: <%= ENV["CARS_RENT_APP_BACKEND_DATABASE_PASSWORD"] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: cars_rent_app_backend_production
- # username: cars_rent_app_backend
- # password: <%= ENV["CARS_RENT_APP_BACKEND_DATABASE_PASSWORD"] %>
+  username: cars_rent_app_backend
+  password: <%= ENV["CARS_RENT_APP_BACKEND_DATABASE_PASSWORD"] %>
