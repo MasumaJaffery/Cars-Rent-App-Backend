@@ -29,6 +29,15 @@ module Api
         end
       end
 
+      def destroy
+        item = Item.find(params[:id])
+        if item.destroy
+          render json: { success: true, message: 'Item deleted' }
+        else
+          render json: { success: false, errors: item.errors.full_messages }, status: :unprocessable_entity
+        end
+      end
+
       private
 
       def item_params
