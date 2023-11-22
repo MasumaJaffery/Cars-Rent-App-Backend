@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root to: 'api/v1/users#index'
 
   get '/current_user', to: 'current_user#index'
-
+  get '/logout', to: 'users/sessions#destroy'
+  
   devise_for :users, path: '', path_names: {
                                  sign_in: 'login',
                                  sign_out: 'logout',

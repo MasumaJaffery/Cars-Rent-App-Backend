@@ -6,12 +6,13 @@ module Users
 
     private
 
-    def respond_with(resource, _opts = {})
+    def respond_with(resource, opts = {})
       Rails.logger.debug "resource: #{resource.inspect}"
-      Rails.logger.debug "opts: #{_opts.inspect}"
+      Rails.logger.debug "opts: #{opts.inspect}"
+
       render json: {
         status: { code: 200, message: 'Logged in successfully.' },
-        data: UserSerializer.new(resource).serializable_hash[:data][:attributes],
+        data: UserSerializer.new(resource, opts).serializable_hash[:data][:attributes],
         jwt_token: generate_jwt_token(resource)
       }, status: :ok
     end

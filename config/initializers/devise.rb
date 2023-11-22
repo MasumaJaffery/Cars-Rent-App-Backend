@@ -2,7 +2,14 @@
 
 Devise.setup do |config|
   config.jwt do |jwt|
-    jwt.secret = Rails.application.secrets.DEVISE_JWT_SECRET_KEY
+    jwt.secret = Rails.application.credentials.fetch(:secret_key_base)
+    jwt.dispatch_requests = [
+      ['POST', %r{^/login$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/logout$}]
+    ]
+    jwt.expiration_time = 30.minutes.to_i
   end
 
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
