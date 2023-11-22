@@ -7,6 +7,8 @@ AllCops:
     - 'Guardfile'
     - 'Rakefile'
     - 'node_modules/**/*'
+  Lint/ScriptPermission:
+    Enabled: false
 
   DisplayCopNames: true
   Style/Documentation:
