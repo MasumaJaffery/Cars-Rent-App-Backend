@@ -1,8 +1,7 @@
-# frozen_string_literal: true
-
 module Api
   module V1
     class CarsController < ApplicationController
+      before_action :authenticate_user!, except: %i[index show]
       before_action :set_car, only: %i[show destroy]
 
       def index
@@ -15,11 +14,11 @@ module Api
       end
 
       def create
-        @car = Car.new(car_params)
+        @car = current_user.cars.build(car_params)
         if @car.save
           render json: @car, status: :created
         else
-          render json: { errors: @car.errors.full_messages }, status: :unprocessable_entity
+          render json: { error: @car.errors.full_messages }, status: :unprocessable_entity
         end
       end
 
@@ -33,12 +32,10 @@ module Api
 
       private
 
-      # Use callbacks to share common setup or constraints between actions.
       def set_car
         @car = Car.find(params[:id])
       end
 
-      # Only allow a list of trusted parameters through.
       def car_params
         params.require(:car).permit(:name, :description, :category, :added_by)
       end

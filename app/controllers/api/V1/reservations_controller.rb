@@ -1,8 +1,7 @@
-# frozen_string_literal: true
-
 module Api
   module V1
     class ReservationsController < ApplicationController
+      load_and_authorize_resource
       before_action :set_reservation, only: %i[show destroy]
 
       # GET
@@ -40,7 +39,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def reservation_params
-        params.require(:reservation).permit(:user_id, :car_id, :appointment_date)
+        params.require(:reservation).permit(:user_id, :car_id, :date, :city)
       end
     end
   end
