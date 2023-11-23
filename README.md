@@ -223,7 +223,7 @@ If you like this project give it a star ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-** I would like to thank to Microverse for giving this inspiring project **
+** I would like to thank to Microverse and Murat Korkmaz **
 
 <p align="right">(<a href="#hello--rails-react">back to top</a>)</p>
 
