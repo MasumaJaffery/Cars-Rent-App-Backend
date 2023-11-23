@@ -16,8 +16,13 @@ module Api
       end
 
       def show
-        item = Item.find(params[:id])
-        render json: item
+        @item = Item.find_by(id: params[:id])
+
+        if @item
+          render json: @item
+        else
+          render json: { error: 'Item not found' }, status: :not_found
+        end
       end
 
       def create
@@ -39,6 +44,10 @@ module Api
       end
 
       private
+
+      def set_item
+        @item = Item.find(params[:id])
+      end
 
       def item_params
         params.permit(:name, :city, :description, :price, :image)
