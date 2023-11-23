@@ -2,14 +2,7 @@
 
 Devise.setup do |config|
   config.jwt do |jwt|
-    jwt.secret = Rails.application.credentials.secret_key_base || Rails.application.secrets.secret_key_base
-    jwt.dispatch_requests = [
-      ['POST', %r{^/login$}]
-    ]
-    jwt.revocation_requests = [
-      ['DELETE', %r{^/logout$}]
-    ]
-    jwt.expiration_time = 30.minutes.to_i
+    jwt.secret = Rails.application.secrets.DEVISE_JWT_SECRET_KEY
   end
 
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
@@ -26,7 +19,4 @@ Devise.setup do |config|
   config.sign_out_via = :delete
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other
-  Devise.setup do |config|
-    config.secret_key = Rails.application.credentials.secret_key_base
-  end
 end
