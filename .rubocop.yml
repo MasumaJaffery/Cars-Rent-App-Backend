@@ -1,0 +1,68 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  NewCops: disable
+  Exclude:
+    - 'db/**/*'
+    - 'bin/*'
+    - 'config/**/*'
+    - 'Guardfile'
+    - 'Rakefile'
+    - 'node_modules/**/*'
+  Lint/ScriptPermission:
+    Enabled: false
+
+  DisplayCopNames: true
+  Style/Documentation:
+    Enabled: false
+
+Layout/LineLength:
+  Max: 180
+Metrics/MethodLength:
+  Include:
+    - 'app/controllers/*'
+    - 'app/models/*'
+  Max: 20
+Metrics/AbcSize:
+  Include:
+    - 'app/controllers/*'
+    - 'app/models/*'
+  Max: 80
+Metrics/ClassLength:
+  Max: 250
+Metrics/BlockLength:
+  AllowedMethods: ['describe']
+  Max: 60
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/EachForSimpleLoop:
+  Enabled: false
+Style/AndOr:
+  Enabled: false
+Style/DefWithParentheses:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Layout/HashAlignment:
+  EnforcedColonStyle: key
+Layout/ExtraSpacing:
+  AllowForAlignment: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+Lint/RaiseException:
+  Enabled: false
+Lint/ScriptPermission:
+  Enabled: false
+Lint/StructNewOverride:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false
+Layout/EndOfLine:
+  Enabled: false
