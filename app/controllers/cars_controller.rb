@@ -24,7 +24,7 @@ module Api
 
       def destroy
         if @car.destroy
-          render json: { success: true, message: 'Car deleted' }
+          render json: { success: true, message: 'Cars deleted succefully' }
         else
           render json: { success: false, errors: @car.errors.full_messages }, status: :unprocessable_entity
         end
