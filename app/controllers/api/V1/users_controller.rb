@@ -38,7 +38,7 @@ module Api
       # DELETE /api/v1/users/:id
       def destroy
         if @api_user.destroy
-          render json: { success: true, message: 'User deleted' }
+          render json: { success: true, message: 'User deleted successfully' }
         else
           render json: { success: false, message: @api_user.errors.full_messages }
         end
