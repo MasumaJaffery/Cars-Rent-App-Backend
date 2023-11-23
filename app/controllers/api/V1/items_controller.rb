@@ -1,7 +1,7 @@
 module Api
   module V1
     class ItemsController < ApplicationController
-      #to fetch items
+      # to fetch items
       def index
         items = Item.all.map do |item|
           {
@@ -15,7 +15,8 @@ module Api
         end
         render json: items
       end
-        #to show items
+
+      # to show items
       def show
         @item = Item.find_by(id: params[:id])
 
@@ -34,7 +35,8 @@ module Api
           render json: { errors: item.errors }, status: :unprocessable_entity
         end
       end
-      #to delete an item
+
+      # to delete an item
       def destroy
         item = Item.find(params[:id])
         if item.destroy
