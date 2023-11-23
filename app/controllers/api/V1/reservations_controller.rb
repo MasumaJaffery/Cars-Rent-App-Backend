@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Api
   module V1
     class ReservationsController < ApplicationController
@@ -18,10 +16,17 @@ module Api
 
       def create
         @reservation = Reservation.new(reservation_params)
-        if @reservation.save
-          render json: @reservation, status: :created
+
+        if current_user
+          @reservation.user_id = current_user.id
+
+          if @reservation.save
+            render json: @reservation, status: :created
+          else
+            render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
+          end
         else
-          render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
+          render json: { errors: ['User not authenticated'] }, status: :unauthorized
         end
       end
 
@@ -41,7 +46,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def reservation_params
-        params.require(:reservation).permit(:user_id, :car_id, :date, :city)
+        params.require(:reservation).permit(:car_id, :date, :city)
       end
     end
   end

@@ -1,5 +1,7 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
-  NewCops: enable
+  NewCops: disable
   Exclude:
     - 'db/**/*'
     - 'bin/*'
@@ -7,8 +9,12 @@ AllCops:
     - 'Guardfile'
     - 'Rakefile'
     - 'node_modules/**/*'
+  Lint/ScriptPermission:
+    Enabled: false
 
   DisplayCopNames: true
+  Style/Documentation:
+    Enabled: false
 
 Layout/LineLength:
   Max: 180
@@ -47,6 +53,8 @@ Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
 Lint/RaiseException:
+  Enabled: false
+Lint/ScriptPermission:
   Enabled: false
 Lint/StructNewOverride:
   Enabled: false
