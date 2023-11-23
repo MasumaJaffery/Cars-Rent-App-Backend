@@ -2,7 +2,7 @@
 
 Devise.setup do |config|
   config.jwt do |jwt|
-    jwt.secret = Rails.application.credentials.fetch(:secret_key_base)
+    jwt.secret = Rails.application.credentials.secret_key_base || Rails.application.secrets.secret_key_base
     jwt.dispatch_requests = [
       ['POST', %r{^/login$}]
     ]
@@ -26,4 +26,7 @@ Devise.setup do |config|
   config.sign_out_via = :delete
   config.responder.error_status = :unprocessable_entity
   config.responder.redirect_status = :see_other
+  Devise.setup do |config|
+    config.secret_key = Rails.application.credentials.secret_key_base
+  end
 end
