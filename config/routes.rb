@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: %i[index create destroy] do
-        resources :cars, only: %i[index create destroy]
+        resources :cars, only: %i[index create destroy show]
       end
       resources :items, only: %i[index create destroy show]
       resources :reservations, only: %i[index create destroy]
