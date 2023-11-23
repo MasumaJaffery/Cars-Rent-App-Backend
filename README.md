@@ -22,7 +22,9 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [Car Rent App Backend] <a name="about-project"></a>
+
 Car Rent App Backend is your one-stop solution for buying and selling cars online. Our platform seamlessly integrates the power of React on the frontend and Rails on the backend, providing users with a modern and efficient way to navigate the world of automobile transactions.
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -81,6 +83,7 @@ To get a local copy of this project and run it in your computer, follow these st
 ### Prerequisites
 
 In order to run this project you need:
+
 - Ruby 3.0.1 or above
 - Ruby on rails 7.0.8 or above
 - node and yarn installed on your system.
@@ -93,7 +96,9 @@ To create this project run the following command:
 ```
 rails new -j webpack hello-rails-react -d postgresql
 ```
+
 run the following line to instal react-router-dom
+
 ```
 By that point you should have rails react correctly setup.
 To run the project, run
@@ -101,9 +106,11 @@ To run the project, run
 For installing react-redux, @reduxjs/toolkit and axios, run the following:
 
 ```
+
 npm install react-redux
 npm install @reduxjs/toolkit
 npm install axios
+
 ```
 
 Then, customize as you like to follow your requirements
@@ -114,18 +121,22 @@ To get a local copy up and running follow these simple example steps.
 
 Clone this repository in the desired folder:
 ```
+
 cd Car-Rent-App-Backend
 git clone https://github.com/MasumaJaffery/Car-Rent-App-Backend
+
 ```
 
 ### Install
 
 To install this project:
 ```
+
 cd Car-Rent-App-Backend
 code .
 bundle install
-```
+
+````
 ### Usage
 
 To run the project, make sure you configured your database correctly, then execute the following command:
@@ -133,12 +144,12 @@ To run the project, make sure you configured your database correctly, then execu
   rails db:create
   rails db:migrate
   rails db:seed
-```
+````
 
 In one, run:
 rails server
 
-Then check the link of the rails server (it should have changed to http://localhost:3000/)
+Then check the link of the rails server (it should have changed to http://localhost:4000/)
 
 ### Run tests
 
@@ -147,6 +158,7 @@ Not implemented tests
 <p align="right">(<a href="#hello--rails-react">back to top</a>)</p>
 
 <!-- AUTHORS -->
+
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Syeda Masuma Fatima**
@@ -165,7 +177,6 @@ Not implemented tests
 - GitHub: [Najibullah_jafari](https://github.com/najibullahjafari)
 - Twitter: [Najibullah_jafari](https://twitter.com/Najib_Jafari_)
 - LinkedIn: [Najibullah_jafari](https://www.linkedin.com/in/najibulla-jafari-609852263/)
-
 
 <p align="right">(<a href="#hello--rails-react">back to top</a>)</p>
 
@@ -217,7 +228,6 @@ If you like this project give it a star ⭐️
 - **Do I need to ask for permission?**
 
   - No need to ask for permission.
-
 
 <!-- ACKNOWLEDGEMENTS -->
 
