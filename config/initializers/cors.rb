@@ -4,7 +4,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://127.0.0.1:3000' # Replace with your frontend URL
+    origins 'http://127.0.0.1:3000'
 
     resource '/api/v1/*',
              headers: :any,
@@ -13,11 +13,20 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins 'http://127.0.0.1:3000' # Replace with your frontend URL
+    origins 'http://127.0.0.1:3000'
 
     resource '/login',
              headers: :any,
-             methods: [:post], # Adjust with the method used for login
+             methods: [:post],
+             credentials: true
+  end
+
+  allow do
+    origins 'http://127.0.0.1:3000'
+
+    resource '/logout',
+             headers: :any,
+             methods: [:delete],
              credentials: true
   end
 end
